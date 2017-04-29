@@ -24,6 +24,7 @@
 
 #include <gnuradio/io_signature.h>
 #include "block1_impl.h"
+#include <volk/volk.h>
 
 namespace gr {
   namespace testinggnuradio {
@@ -59,6 +60,8 @@ namespace gr {
       const float *in = (const float *) input_items[0];
       float *out = (float *) output_items[0];
 
+      float d_mf_out;
+      volk_32f_accumulator_s32f(&d_mf_out, &d_mf_out, 1);
       // Do <+signal processing+>
 
       // Tell runtime system how many output items we produced.
