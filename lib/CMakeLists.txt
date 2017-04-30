@@ -36,7 +36,7 @@ if(NOT testinggnuradio_sources)
 endif(NOT testinggnuradio_sources)
 
 add_library(gnuradio-testinggnuradio SHARED ${testinggnuradio_sources})
-target_link_libraries(gnuradio-testinggnuradio ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
+target_link_libraries(gnuradio-testinggnuradio ${Boost_LIBRARIES} ${VOLK_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
 set_target_properties(gnuradio-testinggnuradio PROPERTIES DEFINE_SYMBOL "gnuradio_testinggnuradio_EXPORTS")
 
 if(APPLE)
